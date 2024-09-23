@@ -46,7 +46,7 @@ To call the apis from Postman, Import the **ocr-reader.postman_collection.json**
 
 4. Automated tests have been implemented to cover all important checks. To run automated tests, after running docker container, use this command :
 ```bash
-npm run test
+docker run -it --rm ocr-reader npm run test
 ```
 
 
