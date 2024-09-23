@@ -3,7 +3,29 @@
 ## Installation
 To run this application, you will need Docker. If you don't have docker, you can also install [tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html) mannually  , and set binary property of config object in both controller files to path of tesseract.exe in your local system.
 
-### Steps to Run Locally
+## Docker Image
+This project is Dockerized, and you can easily run it using the Docker image hosted on Docker Hub. 
+
+### Pull the Docker Image
+To run the application without cloning the repository, you can pull the Docker image directly and run tests:
+```bash
+docker pull janmejayr/ocr-reader:latest
+```
+Use this command to run tests
+```bash
+docker run -it --rm janmejayr/ocr-reader:latest npm run test
+```
+
+### Alternatively, you can run the container and make api calls from postman
+```bash
+docker run -p 3000:3000 janmejayr/ocr-reader:latest
+```
+### Make API calls from postman
+To call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there.
+
+
+
+# To run the project locally 
 
 1. Clone the repository:
    ```bash
@@ -17,6 +39,10 @@ To run this application, you will need Docker. If you don't have docker, you can
 docker build -t ocr-reader .
 docker run -p 3000:3000 ocr-reader
 ```
+
+3. Make API calls from postman
+To call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there.
+
 
 
 This project is a Node.js server that utilizes Tesseract OCR (Version 5) to provide two APIs:
@@ -67,7 +93,6 @@ This project is a Node.js server that utilizes Tesseract OCR (Version 5) to prov
 - **Error Responses**:
   - 400: Invalid base64 image or invalid bounding box type.
   - 500: Tesseract processing failed.
-
 
 ## Testing
 Automated tests have been implemented to cover all important checks. To run automated tests, after running docker container, use this command :
