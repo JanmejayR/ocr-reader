@@ -35,14 +35,20 @@ cd ocr-reader
 ```
 
 2. Build and run the Docker container:
-
 ```bash
 docker build -t ocr-reader .
 docker run -p 3000:3000 ocr-reader
 ```
 
+If you don't have docker Installed, and did install tesseract mannualy (don't forget to add binary: "path/to/tesseract.exe" property to config object in both controller files) , then you can use these commands to install dependencies, run server and run tests :
+```bash
+npm install
+npm run start
+npm run test
+```
+
 3. Make API calls from postman
-To call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there.
+Once server is running, to call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there.
 
 4. Automated tests have been implemented to cover all important checks. To run automated tests, after running docker container, use this command :
 ```bash
