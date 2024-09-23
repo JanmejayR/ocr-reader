@@ -44,6 +44,11 @@ docker run -p 3000:3000 ocr-reader
 3. Make API calls from postman
 To call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there.
 
+5. Testing
+Automated tests have been implemented to cover all important checks. To run automated tests, after running docker container, use this command :
+```bash
+npm run test
+```
 
 
 This project is a Node.js server that utilizes Tesseract OCR (Version 5) to provide two APIs:
@@ -95,8 +100,4 @@ This project is a Node.js server that utilizes Tesseract OCR (Version 5) to prov
   - 400: Invalid base64 image or invalid bounding box type.
   - 500: Tesseract processing failed.
 
-## Testing
-Automated tests have been implemented to cover all important checks. To run automated tests, after running docker container, use this command :
-```bash
-npm run test
-```
+
