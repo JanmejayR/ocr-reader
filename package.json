@@ -1,0 +1,23 @@
+{
+  "name": "ocr-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
+    "start": "node server.js"
+  },
+  "author": "Janmejay Rathore",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.21.0",
+    "is-base64": "^1.1.0",
+    "node-tesseract-ocr": "^2.2.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
