@@ -17,21 +17,22 @@ docker run -it --rm janmejayr/ocr-reader:latest npm run test
 ```
 
 ### Alternatively, you can run the container and make api calls from postman
+To do so, first get the server running by using this command
 ```bash
 docker run -p 3000:3000 janmejayr/ocr-reader:latest
 ```
 ### Make API calls from postman
-To call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there.
+Once server is running, to call the apis from Postman, Import the **ocr-reader.postman_collection.json** file into postman and execute them from postman. I have included a sample base64 image url there. you may change the bbox_type from request body in get-bboxes request to test for "word" , "line", "paragraph", "block", "page"
 
 
 
 # To run the project locally 
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/JanmejayR/ocr-reader.git
-   cd ocr-reader
-   ```
+```bash
+git clone https://github.com/JanmejayR/ocr-reader.git
+cd ocr-reader
+```
 
 2. Build and run the Docker container:
 
